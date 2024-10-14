@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F51E755-76C1-4EF4-9CFC-98B7BEDC69F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QTIL.HostTools.Common.Transport</RootNamespace>
+    <AssemblyName>QTIL.HostTools.Common.Transport</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <PlatformFolder>x86win32</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <PlatformFolder>x86win32</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <PlatformFolder>x86win64</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformFolder>x86win64</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(HOSTBUILD_RESULT)\include\common\DynamicVersionInfo.cs">
+      <Link>Properties\DynamicVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(HOSTBUILD_RESULT)\include\common\GlobalVersionInfo.cs">
+      <Link>Properties\GlobalVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="ITransport.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PTapLibrary.cs" />
+    <Compile Include="SerialPortUtil.cs" />
+    <Compile Include="Transport.cs" />
+    <Compile Include="TransportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransportDialog.Designer.cs">
+      <DependentUpon>TransportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportTypes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TransportDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TransportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="$(TOP_COMMON_HOSTTOOLS)\CommonDictionary.xml">
+      <Link>CommonDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

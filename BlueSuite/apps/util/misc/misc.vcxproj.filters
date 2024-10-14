@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="PreBuild %24%28HOSTBUILD_RESULT%29">
+      <UniqueIdentifier>{1b013305-77e3-4f26-b491-593ee580f612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PreBuild %24%28HOSTBUILD_RESULT%29\include">
+      <UniqueIdentifier>{91841124-b9ba-47da-8230-d3850afd9ba1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PreBuild %24%28HOSTBUILD_RESULT%29\include\misc">
+      <UniqueIdentifier>{78e1570e-94f7-4783-b689-e8f422364090}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="fileutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multilistparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pluginmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="registry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stringutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sysutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="connectionconfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fileutil.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="multilistparser.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="pluginmanager.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="registry.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="stringutil.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="sysutil.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\delegate\delegate.hpp">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\delegate\delegate_list.hpp">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\delegate\delegate_template.hpp">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="connectionconfig.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\misc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{13ba57ea-8fdd-4c4d-85ad-9e534e8ccae0}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="PreBuild %24%28HOSTBUILD_RESULT%29">
+      <UniqueIdentifier>{cb66011a-fdb1-46d7-9314-31c2d7b2069f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PreBuild %24%28HOSTBUILD_RESULT%29\include">
+      <UniqueIdentifier>{cbdab97c-70ea-45d0-a265-eadc46b848f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PreBuild %24%28HOSTBUILD_RESULT%29\include\thread">
+      <UniqueIdentifier>{f096e015-1e75-4cae-84ad-f2ec1d0c794c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="critical_section_c.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\atomic_counter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\critical_section.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\shared_memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\signal_box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\system_wide_mutex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32\thread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="atomic_counter.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="critical_section.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="error_msg.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="safe_counter.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="shared_memory.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="signal_box.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="system_wide_mutex.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.h">
+      <Filter>PreBuild %24%28HOSTBUILD_RESULT%29\include\thread</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

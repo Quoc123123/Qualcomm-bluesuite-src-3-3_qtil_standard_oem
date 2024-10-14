@@ -1,0 +1,58 @@
+#
+#   Makefile.linux
+#
+#  make for linux, on linux, using gcc
+#  Tested on Fedora Core 4, 2.6 kernel
+#  Assumes xerces-c and xerces-c-devel RPM packages are installed.
+#
+
+BUILD_TARGET=linux
+PLATFORM_TYPE=posix
+
+# VARIABLES
+
+CPLUS=g++
+CC=gcc
+CPPROC=$(CC) -E
+CC_WARNING_LEVEL=-Wall -g
+PRE_STUFF=-fPIC -I$(OUTPUT_INT) -DPOSIX_NO_CLOCK_GETTIME
+LINK_PRE_STUFF=-Wl,-E,-rpath-link,$(OUTPUT_BIN),-rpath,'$$ORIGIN' -L$(OUTPUT_BIN)
+TARGET_FLAGS=
+TARGET_LIBS=
+OBJ_OUT=-o 
+EXE_OUT=-o 
+SO_OUT=-o
+SO_LINK_PRE_STUFF=-shared -Xlinker -E -L$(OUTPUT_BIN)
+
+LEX=lex
+LEX_OUT=>
+
+PLATFORM_LIBRARY_INCANTATION=if test -f $@; then $(RM) $@; fi ; ar cr $@ $^; ranlib $@
+
+# EXTENSIONS
+OBJ=.o
+EXE=
+SO=.so
+PLATFORM_MANGLED_LIB=$(patsubst %,lib%.a,$(LIBRARY))
+PLATFORM_MANGLED_EXE_LIB=$(patsubst %,lib%.a,$(BUILT_LIBS))
+PLATFORM_MANGLED_SO_LIB=$(patsubst %,lib%.a,$(BUILT_LIBS))
+
+#
+# Auto dependency generation patterns. A <filename>.d makefile is created for each <filename>.cpp/.c file.
+# The .d file contains the dependencies for that file.
+# Each module makefile includes the .d files to use the dependency information.
+#
+%.d : %.cpp
+	@set -e; rm -f $@; \
+    $(CC) -MM $(PRE_STUFF) $(MODULE_DEFINES) $(DEBUG_FLAGS) $(TARGET_FLAGS) $(BUILD_INCLUDES) $(INCLUDE_DIRS) $< > $@.$$$$; \
+    sed 's,\($*\)\$(OBJ)[ :]*,$(OUTPUT_INT)/\1$(OBJ) $@ : ,g' < $@.$$$$ > $@; \
+    rm -f $@.$$$$
+
+%.d : %.c
+	@set -e; rm -f $@; \
+    $(CC) -MM $(PRE_STUFF) $(MODULE_DEFINES) $(DEBUG_FLAGS) $(TARGET_FLAGS) $(BUILD_INCLUDES) $(INCLUDE_DIRS) $< > $@.$$$$; \
+    sed 's,\($*\)\$(OBJ)[ :]*,$(OUTPUT_INT)/\1$(OBJ) $@ : ,g' < $@.$$$$ > $@; \
+    rm -f $@.$$$$
+
+remove_autodep_makefiles:
+	$(RM) $(EXE_OBJECTS:$(OBJ)=.d) $(LIB_OBJECTS:$(OBJ)=.d) $(SHARED_LIB_OBJECTS:$(OBJ)=.d)

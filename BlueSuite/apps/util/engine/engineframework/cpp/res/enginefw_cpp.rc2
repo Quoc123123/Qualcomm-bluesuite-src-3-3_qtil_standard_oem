@@ -1,0 +1,18 @@
+//
+// enginefw_cpp.rc2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+
+#define MY_VERSION_FILE_DESCRIPTION     "Engine Framework\0"
+#define MY_VERSION_COPYRIGHT            VERSION_COPYRIGHT_START_YEAR("2011")
+
+#include "common/versionInfoResource.rc"
+
+/////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F3078E3D-B63B-4098-87BC-4BA84E05EE4A}</ProjectGuid>
+    <RootNamespace>CdaProdTestCmd</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(HOSTBUILD_RESULT)\QtilBuildHelper\Qtil_$(Configuration)_$(Platform).props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(HOSTBUILD_RESULT)\QtilBuildHelper\Qtil_$(Configuration)_$(Platform).props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(HOSTBUILD_RESULT)\QtilBuildHelper\Qtil_$(Configuration)_$(Platform).props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(HOSTBUILD_RESULT)\QtilBuildHelper\Qtil_$(Configuration)_$(Platform).props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NOGPIB;_CONSOLE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>.;..;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\common;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\win;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>testengine.lib;testflash.lib;setupapi.lib;Bthprops.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NOGPIB;_CONSOLE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>.;..;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\common;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\win64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>testengine.lib;testflash.lib;setupapi.lib;Bthprops.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>NOGPIB;_CONSOLE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>.;..;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\common;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\win;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>testengine.lib;testflash.lib;setupapi.lib;Bthprops.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>NOGPIB;_CONSOLE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <AdditionalIncludeDirectories>.;..;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\common;$(TOP_COMMON_HOSTTOOLS)\3rd\openssl\include\win64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>testengine.lib;testflash.lib;setupapi.lib;Bthprops.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AtMessenger.cpp" />
+    <ClCompile Include="CdaDevice.cpp" />
+    <ClCompile Include="CdaDevTests.cpp" />
+    <ClCompile Include="CdaDtsDevice.cpp" />
+    <ClCompile Include="CdaDtsDevTests.cpp" />
+    <ClCompile Include="ChargerDevice.cpp" />
+    <ClCompile Include="ChargerTests.cpp" />
+    <ClCompile Include="CdaProdTestCmd.cpp" />
+    <ClCompile Include="PtPsStoreKey.cpp" />
+    <ClCompile Include="PtSerialNum.cpp" />
+    <ClCompile Include="PtSerialPort.cpp" />
+    <ClCompile Include="PtBdAddrMgr.cpp" />
+    <ClCompile Include="PtSetup.cpp" />
+    <ClCompile Include="PtStation.cpp" />
+    <ClCompile Include="PtTimer.cpp" />
+    <ClCompile Include="..\PtUi.cpp" />
+    <ClCompile Include="..\PtUtil.cpp" />
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Equipment\AgilentEsaSpectrumAnalyser.cpp" />
+    <ClCompile Include="Equipment\AgilentN4010ATester.cpp" />
+    <ClCompile Include="Equipment\AnritsuMT8852BTester.cpp" />
+    <ClCompile Include="Equipment\GpibInterface.cpp" />
+    <ClCompile Include="Equipment\ReferenceEndpoint.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AtMessenger.h" />
+    <ClInclude Include="CdaDevice.h" />
+    <ClInclude Include="CdaDevTests.h" />
+    <ClInclude Include="CdaDtsDevice.h" />
+    <ClInclude Include="CdaDtsDevTests.h" />
+    <ClInclude Include="ChargerDevice.h" />
+    <ClInclude Include="ChargerTests.h" />
+    <ClInclude Include="Dut.h" />
+    <ClInclude Include="PtPsStoreKey.h" />
+    <ClInclude Include="PtSerialNum.h" />
+    <ClInclude Include="PtSerialPort.h" />
+    <ClInclude Include="PtBdAddrMgr.h" />
+    <ClInclude Include="PtSetup.h" />
+    <ClInclude Include="..\PtException.h" />
+    <ClInclude Include="PtStation.h" />
+    <ClInclude Include="PtTimer.h" />
+    <ClInclude Include="..\PtUi.h" />
+    <ClInclude Include="..\PtUtil.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="Equipment\AgilentEsaSpectrumAnalyser.h" />
+    <ClInclude Include="Equipment\AgilentN4010ATester.h" />
+    <ClInclude Include="Equipment\AnritsuMT8852BTester.h" />
+    <ClInclude Include="Equipment\GpibInterface.h" />
+    <ClInclude Include="Equipment\ReferenceEndpoint.h" />
+    <ClInclude Include="Equipment\SpectrumAnalyserInstrument.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CdaProdTestCmd.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CdaProdTestCmd.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="$(TOP_COMMON_HOSTTOOLS)\common\manifest\Win10_longPathAware.manifest" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

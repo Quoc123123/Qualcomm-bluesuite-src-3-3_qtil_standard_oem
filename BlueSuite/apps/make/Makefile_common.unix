@@ -1,0 +1,14 @@
+#
+#  This is and included make file, which sets up a bunch of standard
+#  unixlike values for command variables.
+#
+COPY_DEP_TO_TARG = $(MKDIR) $(dir $@) && $(COPY) $^ $@ && chmod a-w $@
+
+MKDIR=mkdir -p
+RM=rm -f
+GREP=grep
+GREPNOT=grep -v
+DIR=ls -l
+COPY=cp -fR
+CAT=cat
+

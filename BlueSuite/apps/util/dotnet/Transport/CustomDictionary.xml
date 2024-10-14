@@ -1,0 +1,19 @@
+<Dictionary>
+  <Words>
+    <Unrecognized>
+    </Unrecognized>
+    <Recognized>
+      <Word>pttrans_enumerate_strings</Word>
+    </Recognized>
+    <Deprecated>
+    </Deprecated>		
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>BCSP</Acronym>
+      <Acronym>PTAP</Acronym>
+      <Acronym>SPI</Acronym>
+      <Acronym>USB</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>

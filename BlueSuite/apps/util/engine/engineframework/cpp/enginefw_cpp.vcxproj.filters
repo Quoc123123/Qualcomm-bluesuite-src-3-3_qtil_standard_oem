@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\PreBuild %24%28HOSTBUILD_RESULT%29">
+      <UniqueIdentifier>{b10e9ff5-59cd-4ed5-91d1-c10f726123c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\PreBuild %24%28HOSTBUILD_RESULT%29\include">
+      <UniqueIdentifier>{a5228283-3b49-4b2a-9625-02960bed0f68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\PreBuild %24%28HOSTBUILD_RESULT%29\include\engine">
+      <UniqueIdentifier>{e8ee89b2-b444-49f2-85a2-09e03f1754e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3d793f15-6a43-400d-802b-154a75b4910a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="enginefw_cpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\misc\multilistparser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="enginefw_interface.h">
+      <Filter>Header Files\PreBuild %24%28HOSTBUILD_RESULT%29\include\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="enginefw_cpp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="enginefw_cpp.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\enginefw_cpp.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

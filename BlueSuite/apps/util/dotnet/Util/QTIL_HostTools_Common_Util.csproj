@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Win32</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DC968ED-5915-43D8-BA63-7A7A4AF14F23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QTIL.HostTools.Common.Util</RootNamespace>
+    <AssemblyName>QTIL.HostTools.Common.Util</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <PlatformFolder>x86win32</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <PlatformFolder>x86win32</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformFolder>x86win64</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformFolder>x86win64</PlatformFolder>
+    <OutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\intermediate\$(AssemblyName)\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EngineFrameworkClr">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(HOSTBUILD_RESULT)\$(PlatformFolder)\bin\$(Configuration)\EngineFrameworkClr.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractBaseClass\ConcreteClassAttribute.cs" />
+    <Compile Include="AbstractBaseClass\GeneralConcreteClassProvider.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ByteArrayComparison.cs" />
+    <Compile Include="ExtensionAttribute.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="ImplementorsOf.cs" />
+    <Compile Include="ListEv.cs" />
+    <Compile Include="MACAddress.cs" />
+    <Compile Include="MouseBounds\MouseBounds.cs" />
+    <Compile Include="HotKeyListener.cs" />
+    <Compile Include="MouseBounds\MouseBoundsEventArgs.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Registry\Registry.cs" />
+    <Compile Include="Registry\RegistryValue.cs" />
+    <Compile Include="SuspendUpdate.cs" />
+    <Compile Include="NamedValue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="$(HOSTBUILD_RESULT)\include\common\DynamicVersionInfo.cs">
+      <Link>Properties\DynamicVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="$(HOSTBUILD_RESULT)\include\common\GlobalVersionInfo.cs">
+      <Link>Properties\GlobalVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="SparseArray.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="$(TOP_COMMON_HOSTTOOLS)\CommonDictionary.xml">
+      <Link>CommonDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

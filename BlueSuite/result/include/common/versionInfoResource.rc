@@ -1,0 +1,96 @@
+//
+// versionInfoResource.rc - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+#include "windows.h"
+#include "common/globalversioninfo.h"
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// VERSIONINFO
+//
+
+
+#ifndef VERSION_APP_FULL_NUMERIC
+#error VERSION_APP_FULL_NUMERIC needs to be defined with a version number in the form n,n,n,n see http://msdn.microsoft.com/en-us/library/aa381058.aspx
+#endif
+
+#ifndef VERSION_FILE_TYPE
+#define VERSION_FILE_TYPE VFT_APP
+#endif
+
+#ifndef VERSION_FILE_SUB_TYPE
+#define VERSION_FILE_SUB_TYPE VFT2_UNKNOWN
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION VERSION_APP_FULL_NUMERIC
+ FILEFLAGSMASK 0x3fL
+#ifdef VERSION_SPECIAL_BUILD
+ #ifdef _DEBUG
+  FILEFLAGS VS_FF_SPECIALBUILD | VS_FF_DEBUG
+ #else
+  FILEFLAGS VS_FF_SPECIALBUILD
+ #endif
+#else
+ #ifdef _DEBUG
+  FILEFLAGS VS_FF_DEBUG
+ #else
+  FILEFLAGS 0
+ #endif
+#endif
+ FILEOS VOS__WINDOWS32
+ FILETYPE VERSION_FILE_TYPE
+ FILESUBTYPE VERSION_FILE_SUB_TYPE
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904E4" /* This must match the VarFileInfo.Translation (allowing for differing formats) */
+        BEGIN
+            VALUE "CompanyName",        VERSION_SHORT_COMPANY_NAME
+            VALUE "FileDescription",    MY_VERSION_FILE_DESCRIPTION
+            VALUE "FileVersion",        VERSION_APP_FULL_STR
+            VALUE "LegalCopyright",     MY_VERSION_COPYRIGHT
+            VALUE "ProductName",        VERSION_PRODUCT
+            #ifdef VERSION_SPECIAL_BUILD
+            VALUE "SpecialBuild",       VERSION_SPECIAL_BUILD
+            #endif
+#ifdef WIN64
+ #ifdef _DEBUG
+            VALUE "Platform", "Windows 64 bit (Debug build)"
+ #else
+            VALUE "Platform", "Windows 64 bit"
+ #endif
+#else
+ #ifdef _DEBUG
+            VALUE "Platform", "Windows 32 bit (Debug build)"
+ #else
+            VALUE "Platform", "Windows 32 bit"
+ #endif
+#endif
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0809, 1252 /* This must match the BLOCK value above */
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.K.) resources
+
+/////////////////////////////////////////////////////////////////////////////
+
